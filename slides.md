@@ -1,7 +1,7 @@
 # SCSS: 201
 ## Proper care and feeding of your styles
 ### Ryan Parsley
-#### 2023-04-12
+### 2023-04-12
 
 ---
 
