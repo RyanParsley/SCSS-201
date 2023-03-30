@@ -247,13 +247,22 @@ and is resistent to typos.
 
 ???
 
-Rarely
+Rarely. Day to day feature work, styling your app, you probably don't want a function, but when you need them, they're great.
+
+You probably mostly want functions if you're building/maintaining a css framework. 
+
+They can be great for DRYing up your source code, but could lead to generating more than you bargain for. Also, if you find
+yourself generating tons of similar code, that could be a smell that your approach is off. Sass functions can be "too much rope" sometimes. 
+
+Do you really want to generate a dozen px values for column widths, or does flexbox do what you need with less?
 
 ---
 
 # Don't just generate a bunch of bad css
 
 ???
+
+You're DRYing up your source code... but potentially generating a ton of CSS.
 
 A somewhat common problem is to abuse scss.
 
