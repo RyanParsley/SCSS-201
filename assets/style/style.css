@@ -67,9 +67,9 @@ pre {
   background: transparent;
 }
 
-code {
+.remark-slide-content code {
   color: var(--nord6);
-  background-color: var(--nord1);
+  background-color: var(--nord2);
   padding: 0.2em 0.4em;
   padding: 0.2em 0.4em;
   border-radius: 4px;
@@ -86,13 +86,41 @@ code {
   font: 300 0.92em/1.8 PingFang SC, Lantinghei SC, Microsoft Yahei,
     Hiragino Sans GB, Microsoft Sans Serif, WenQuanYi Micro Hei, sans;
 }
-
-.remark-code,
-.hljs-keyword {
+.remark-code.hljs,
+.remark-code.hljs .hljs-keyword {
   color: var(--nord6);
   background-color: var(--nord1);
   border-radius: 4px;
   transition: background-color 400ms ease-in-out 0s;
+}
+.remark-code.hljs .hljs-attribute {
+  color: var(--nord7);
+}
+.remark-code.hljs .hljs-selector-class {
+  color: var(--nord8);
+}
+.remark-code.hljs .hljs-selector-tag {
+  color: var(--nord9);
+}
+
+.remark-code.hljs .hljs-number {
+  color: var(--nord5);
+}
+
+.remark-code.hljs .hljs-string {
+  color: var(--nord6);
+}
+.remark-code.hljs .hljs-attr {
+  color: var(--nord7);
+}
+.remark-code.hljs .hljs-name {
+  color: var(--nord8);
+}
+.remark-code.hljs .hljs-tag {
+  color: var(--nord9);
+}
+.remark-code.hljs .hljs-comment {
+  color: var(--nord10);
 }
 
 blockquote {

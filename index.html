@@ -127,15 +127,65 @@ If you want to use Sass responsibly, you should be aware of what's happening und
 Sass can help you write cleaner css, but it often helps developers write gobs of worse css that they never consider. 
 
 ---
-class: middle, center
 
 # Mixins
 
+```scss
+@mixin reset-list {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+@mixin horizontal-list {
+  @include reset-list;
+
+  li {
+    display: inline-block;
+    margin-left: 2em;
+    margin-right: 2em;
+  }
+}
+
+nav ul {
+  @include horizontal-list;
+}
+```
+
+???
+
+To my sensibilities, this is what you want when you're stuck with a utility class. 
+
 ---
 
-# The point of placeholders
+# Why is that cool?
 
-They compile away if you don't use them
+```html
+<!-- html implication of utility class -->
+
+<nav>
+  <ul class="reset-list horizontal-list">...</ul>
+</nav>
+```
+
+```html
+<!-- with mixin -->
+
+<nav>
+  <ul>...</ul>
+</nav>
+
+```
+
+???
+
+arguments in favor of abandoning semantics are often around the maintainability
+of semantic html at scale, but mixin and placeholders largely solve for that. 
+
+---
+
+# Placeholders
+> It looks and acts a lot like a class selector, but it starts with a % and it's not included in the CSS output.
 
 ???
 
@@ -143,19 +193,61 @@ What else can I say?
 
 ---
 
-# Maps
+# Placeholders
 
-- enums for css
+```scss
+%toolbelt {
+  box-sizing: border-box;
+  border-top: 1px rgba(#000, .12) solid;
+  padding: 16px 0;
+  width: 100%;
+
+  &:hover { border: 2px rgba(#000, .5) solid; }
+}
+
+.action-buttons {
+  @extend %toolbelt;
+  color: #4285f4;
+}
+
+.reset-buttons {
+  @extend %toolbelt;
+  color: #cddc39;
+}
+```
 
 ???
 
+Again, we have reusable styles that are not coupled with the semantics of the markup
+
+... yet still compatible with semantic markup. 
+
+---
+
+# Maps
+
+```scss
+$font-weights: ("regular": 400, "medium": 500, "bold": 700);
+
+map.get($font-weights, "medium"); // 500
+```
+
+???
 Say goodbye to a lot of magic string flavored css issues. 
 
-https://sass-lang.com/documentation/values/maps
+If you copy/paste from the DS color pallete, you're on a doomed trajectory with respect to upgrades.
+
+Here you end up with code that easier to refactor.
+Assured to be consistent.
+and is resistent to typos.
 
 ---
 
 # When to use functions
+
+??? 
+
+Rarely
 
 ---
 
