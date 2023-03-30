@@ -1,5 +1,5 @@
 cssFiles:
-  - style/style.css
+  - assets/style/style.css
 dest: docs
 out: index.html
 scriptFiles:
