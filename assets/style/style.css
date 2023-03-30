@@ -1,0 +1,207 @@
+/*
+* Nord
+**/
+
+@import "./nord.css";
+
+.remark-slide-content {
+  background-color: var(--nord0);
+  font-family: "FiraCode Nerd Font Mono", FiraCode, "Courier New", Courier,
+    monospace;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+span,
+strong,
+li {
+  color: var(--nord6);
+}
+
+.remark-slide-content h1 {
+  font-size: 2.75rem;
+}
+.remark-slide-content.center h1 {
+  font-size: 3.75rem;
+}
+.remark-slide-content h2 {
+  font-size: 1.75rem;
+}
+.remark-slide-content h3 {
+  font-size: 1.3125rem;
+}
+.remark-slide-content h4 {
+  font-size: 1rem;
+}
+
+small {
+  color: var(--nord4);
+  opacity: 0.6;
+}
+
+a {
+  color: var(--nord8);
+  border-radius: 0.25em;
+  transition: color 200ms ease-in-out 0s, background-color 200ms ease-in-out 0s;
+  cursor: pointer;
+  text-decoration: none;
+  outline: none;
+  border-bottom-color: transparent;
+}
+
+a:hover {
+  color: var(--nord8);
+  background-color: var(--nord3);
+  opacity: 0.8;
+  border-bottom-color: transparent;
+}
+
+pre {
+  padding: 0px;
+  border: 0px;
+  background: transparent;
+}
+
+code {
+  color: var(--nord6);
+  background-color: var(--nord1);
+  padding: 0.2em 0.4em;
+  padding: 0.2em 0.4em;
+  border-radius: 4px;
+  transition: background-color 400ms ease-in-out 0s;
+}
+
+.remark-inline-code {
+  color: var(--nord6);
+  background-color: var(--nord1);
+  padding: 0.2em 0.4em;
+  padding: 0.2em 0.4em;
+  border-radius: 4px;
+  transition: background-color 400ms ease-in-out 0s;
+  font: 300 0.92em/1.8 PingFang SC, Lantinghei SC, Microsoft Yahei,
+    Hiragino Sans GB, Microsoft Sans Serif, WenQuanYi Micro Hei, sans;
+}
+
+.remark-code,
+.hljs-keyword {
+  color: var(--nord6);
+  background-color: var(--nord1);
+  border-radius: 4px;
+  transition: background-color 400ms ease-in-out 0s;
+}
+
+blockquote {
+  display: block;
+  margin-block-start: 1em;
+  margin-block-end: 1em;
+  margin-inline-start: 40px;
+  margin-inline-end: 40px;
+  padding-left: 1.5em;
+  color: var(--nord9);
+  border-left: 0.2em solid rgba(136, 192, 208, 0.6);
+  margin: 1em 0px;
+  transition: border-left 400ms ease-in-out 0s, color 400ms ease-in-out 0s;
+}
+
+blockquote > p {
+  color: var(--nord4);
+  opacity: 0.65;
+}
+
+ol,
+li ol {
+  margin-left: 0em;
+}
+
+ul,
+ol ul,
+ul li ul {
+  list-style-type: none;
+  margin: 0px 0px 1em;
+  padding: 0px 0px 0px 1em;
+}
+
+ul > li {
+  position: relative;
+  margin-left: 0.3em;
+  margin-bottom: 0.7em;
+  margin-top: 0.7em;
+}
+
+ul > li::before {
+  content: "";
+  position: absolute;
+  width: 6px;
+  height: 6px;
+  top: 0.7em;
+  left: -20px;
+  background-color: rgb(76, 86, 106);
+  border-radius: 50%;
+  transition: background-color 400ms ease-in-out 0s;
+}
+
+ol {
+  margin: 0px 0px 1em;
+  padding: 0px 0px 0px 1em;
+}
+
+ol > li {
+  padding-left: 0.3em;
+}
+
+.column-2,
+.column-3,
+.column-4,
+.column-5,
+.column-6 {
+  column-rule: 0.2px solid rgba(216, 222, 233, 0.5);
+}
+
+.nord-dark-steep-img {
+  position: relative;
+  padding: 2px;
+}
+
+.nord-dark-steep-img::after {
+  background: linear-gradient(
+      rgba(46, 52, 64, 1) 1%,
+      rgba(46, 52, 64, 0),
+      rgba(46, 52, 64, 0),
+      rgba(46, 52, 64, 1) 85%
+    ),
+    linear-gradient(
+      to right,
+      rgba(46, 52, 64, 1) 0%,
+      rgba(46, 52, 64, 0),
+      rgba(46, 52, 64, 0),
+      rgba(46, 52, 64, 1) 100%
+    );
+  content: "";
+  display: block;
+  height: 100%;
+  width: 100%;
+  top: 0;
+  left: 0;
+  position: absolute;
+  pointer-events: none;
+}
+
+.remark-code::-webkit-scrollbar {
+  height: 8px;
+  width: 8px;
+}
+
+.remark-code::-webkit-scrollbar-thumb {
+  background-color: var(--oc-gray-2);
+  outline: 1px solid #333;
+  border-radius: 4px;
+}
+
+.remark-code::-webkit-scrollbar-thumb {
+  background-color: var(--nord3);
+}
