@@ -1,0 +1,14 @@
+{
+  "name": "scss-201",
+  "version": "1.0.0",
+  "description": "Intermediate SCSS concepts",
+  "scripts": {
+    "start": "remarker",
+    "build": "remarker build"
+  },
+  "author": "Ryan Parsley",
+  "license": "ISC",
+  "dependencies": {
+    "remarker": "^1.15.0"
+  }
+}
