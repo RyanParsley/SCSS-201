@@ -40,9 +40,15 @@ li {
 }
 .remark-slide-content h3 {
   font-size: 1.3125rem;
+  color: var(--nord9);
 }
 .remark-slide-content h4 {
   font-size: 1rem;
+  color: var(--nord9);
+}
+
+.remark-slide-number {
+  color: var(--nord9);
 }
 
 small {
@@ -108,11 +114,12 @@ pre {
 .remark-code.hljs .hljs-selector-tag {
   color: var(--nord9);
 }
-
 .remark-code.hljs .hljs-number {
   color: var(--nord5);
 }
-
+.remark-code.hljs .hljs-variable {
+  color: var(--nord15);
+}
 .remark-code.hljs .hljs-string {
   color: var(--nord6);
 }
@@ -170,9 +177,9 @@ ul > li {
 ul > li::before {
   content: "";
   position: absolute;
-  width: 6px;
-  height: 6px;
-  top: 0.7em;
+  width: 0.375rem;
+  height: 0.375rem;
+  top: 0.5rem;
   left: -20px;
   background-color: rgb(76, 86, 106);
   border-radius: 50%;
