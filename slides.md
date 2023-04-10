@@ -141,6 +141,22 @@ This was not a good time.
 
 # Functions
 
+```scss
+@function invert($color, $amount: 100%) {
+  $inverse: change-color($color, $hue: hue($color) + 180);
+  @return mix($inverse, $color, $amount);
+}
+
+$primary-color: #036;
+.header {
+  background-color: invert($primary-color, 80%);
+}
+```
+
+---
+
+# Functions
+
 ## When to use functions?
 
 > While it’s technically possible for functions to have side-effects like setting global variables, this is strongly discouraged. Use mixins for side-effects, and use functions just to compute values.
@@ -162,7 +178,41 @@ So, what's a mixin?
 
 # Mixins
 
+```scss
+@mixin reset-list {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+@mixin horizontal-list {
+  @include reset-list;
+
+  li {
+    display: inline-block;
+    margin-left: 2em;
+    margin-right: 2em;
+  }
+}
+
+nav ul {
+  @include horizontal-list;
+}
+```
+
+???
+
+To my sensibilities, this is what you want when you're stuck with a utility class. 
+
+---
+
+# Mixins
+
 > Mixins allow you to define styles that can be re-used throughout your stylesheet. They make it easy to avoid using non-semantic classes like .float-left, and to distribute collections of styles in libraries.
+
+???
+
+And according to the documentation, that's exactly why they exist!
 
 ---
 
