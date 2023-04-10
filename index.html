@@ -41,6 +41,15 @@ h1, h2, h3 {
 ### Ryan Parsley
 #### 2023-04-12
 
+???
+
+Hey, it's me again. This time I want to talk about a different angle to think about css architecture.
+
+Should we use scss, and if so why?
+
+To get to the heart of that, I want to talk about why bits of scss are interesting and leverage that
+to build the case for when and if we should use things. 
+
 ---
 
 class: middle, center
@@ -88,15 +97,35 @@ Now you're just being silly
 
 ---
 
+background-image: url(./assets/deleteCSS.jpg)
+background-size: 700px auto
+
+???
+
+Devs live in fear of editing css.
+
+It's like the new perl. Write once update never.
+
+Why do they feel that way!?
+
+---
+
 class: middle, center
 
 # CSS is simple.
 ## That's what makes it hard. 
 
----
+???
 
-background-image: url(./assets/deleteCSS.jpg)
-background-size: 700px auto
+The same dev will throw shade at css for not being worth learning because it's not a _real_ programming language...
+
+Then go out of thier way to avoid editing css becasue they have no intuition about how the language works. 
+
+Good CSS repeats itself... sometimes. And that's as ok as it can be. 
+
+The most natural way to DRY up CSS is to simply leverage the cascade. 
+
+That can be elegant if you do it right, but has it's own set of problems to come to terms with. 
 
 ---
 
@@ -110,6 +139,10 @@ class: middle, center
 Designing and arranging things people use so that the people and things... 
 
 **interact most efficiently and safely**
+
+You want/need code reuse uncoupled from semantics? 
+
+SCSS provides a means for that that doesn't govern your markup.
 
 ---
 
@@ -125,6 +158,59 @@ Designing and arranging things people use so that the people and things...
 If you want to use Sass responsibly, you should be aware of what's happening under the hood.
 
 Sass can help you write cleaner css, but it often helps developers write gobs of worse css that they never consider. 
+
+---
+
+# Functions
+
+> They make it easy to abstract out common formulas and behaviors in a readable way.
+
+???
+
+Once upon a time I maintained my own naive pixel based grid system. 
+
+I'd noodle away in google docs to derive sensible values and manually plug the results into css.
+
+This was not a good time. 
+
+---
+
+# Functions
+
+## When to use functions?
+
+> While it’s technically possible for functions to have side-effects like setting global variables, this is strongly discouraged. Use mixins for side-effects, and use functions just to compute values.
+
+???
+
+Rarely. Day to day feature work, styling your app, you probably don't want a function, but when you need them, they're great.
+
+You probably mostly want functions if you're building/maintaining a css framework. 
+
+They can be great for DRYing up your source code, but could lead to generating more than you bargain for. Also, if you find
+yourself generating tons of similar code, that could be a smell that your approach is off. Sass functions can be "too much rope" sometimes. 
+
+Do you really want to generate a dozen px values for column widths, or does flexbox do what you need with less?
+
+So, what's a mixin?
+
+---
+
+# Mixins
+
+> Mixins allow you to define styles that can be re-used throughout your stylesheet. They make it easy to avoid using non-semantic classes like .float-left, and to distribute collections of styles in libraries.
+
+---
+
+# Mixins
+ 
+## That looks like a function, what's the difference!?
+
+???
+
+Do you want to genereate a value, or do you want to generate css.
+
+Typically, unless you're building a component liberary, your responsibilities will stop at generating css. 
 
 ---
 
@@ -242,21 +328,7 @@ Assured to be consistent.
 and is resistent to typos.
 
 ---
-
-# When to use functions
-
-???
-
-Rarely. Day to day feature work, styling your app, you probably don't want a function, but when you need them, they're great.
-
-You probably mostly want functions if you're building/maintaining a css framework. 
-
-They can be great for DRYing up your source code, but could lead to generating more than you bargain for. Also, if you find
-yourself generating tons of similar code, that could be a smell that your approach is off. Sass functions can be "too much rope" sometimes. 
-
-Do you really want to generate a dozen px values for column widths, or does flexbox do what you need with less?
-
----
+class: middle, center
 
 # Don't just generate a bunch of bad css
 
@@ -276,8 +348,17 @@ brittle selectors
 
 # Lint your styles
 
-```scss
-example of lint error
+```json
+{
+  'scss/no-duplicate-mixins': true,
+  'scss/no-global-function-names': true
+  'scss/at-mixin-pattern': [
+    '^(-?[a-z][a-z0-9]*)(-[a-z0-9]+)*$',
+    {
+      message: 'Expected mixin name to be kebab-case',
+    },
+  ],
+}
 ```
 
 ???
