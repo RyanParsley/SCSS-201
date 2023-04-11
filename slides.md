@@ -9,10 +9,14 @@ class: middle, center, title
 
 Hey, it's me again. This time I want to talk about a different angle to think about css architecture.
 
-Should we use scss, and if so why?
+Famously, scss is missused by well intentioned beginners. 
 
-To get to the heart of that, I want to talk about why bits of scss are interesting and leverage that
-to build the case for when and if we should use things. 
+How do we guage a *good* use of scss?
+
+I'll frame that by starting with the following 2 questions:
+
+Should we even use scss in 2023?
+If so, why?
 
 ---
 
@@ -321,6 +325,37 @@ What else can I say?
 Again, we have reusable styles that are not coupled with the semantics of the markup
 
 ... yet still compatible with semantic markup. 
+
+---
+
+# Placeholders
+
+```scss
+.action-buttons, .reset-buttons {
+  box-sizing: border-box;
+  border-top: 1px rgba(0, 0, 0, 0.12) solid;
+  padding: 16px 0;
+  width: 100%;
+}
+.action-buttons:hover, .reset-buttons:hover {
+  border: 2px rgba(0, 0, 0, 0.5) solid;
+}
+
+.action-buttons {
+  color: #4285f4;
+}
+
+.reset-buttons {
+  color: #cddc39;
+}
+```
+???
+
+You can wire up a linter to pester you to refactor your code, or leverage scss to enable
+you to not need to. This feels like a more expressive way to write the css that ultimately want.
+
+A problem with css "best practices" is the stakes often feel too low to champion. Especially, 
+when contrasted with the ease of use of some less ideal solutions.
 
 ---
 
