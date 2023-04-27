@@ -4,7 +4,7 @@
 - Ryan Parsley
 - 2023-04-12
 
-Famously, SCSS is misused by well intentioned beginners. How do we gauge good use of SCSS? Should we even use scss in 2023? If so, why?
+Famously, SCSS is misused by well intentioned beginners. How do we gauge good use of SCSS? Should we even use SCSS in 2023? If so, why?
 
 In this presentation, I assert that if we agree on why we use SCSS, we're likely to agree on how to use SCSS.
 
